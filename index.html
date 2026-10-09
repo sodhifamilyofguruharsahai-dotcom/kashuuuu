@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kashish ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+  background: radial-gradient(circle at top, #45152f, #170c20 65%, #09060d);
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px 25px;
+  text-align: center;
+  border: 1px solid #ffffff25;
+  border-radius: 28px;
+  background: #ffffff0b;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 80px #0005;
+  animation: appear 1s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  color: #ff9fc4;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+h1 { font-size: clamp(42px, 10vw, 62px); }
+h2 { font-size: clamp(32px, 8vw, 45px); }
+
+em { color: #ff80ae; }
+
+p {
+  color: #e4d1df;
+  line-height: 1.8;
+  margin: 15px 0;
+  font-size: 15px;
+}
+
+.heart {
+  font-size: 48px;
+  color: #ff80ae;
+  margin: 20px 0;
+  animation: beat 1.3s infinite;
+  display: inline-block;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 22px;
+  margin: 8px 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.primary {
+  background: #ff8db8;
+  color: #341021;
+  box-shadow: 0 5px 25px #ff80ae40;
+}
+
+.secondary {
+  background: #ffffff12;
+  color: white;
+  border: 1px solid #ffffff30;
+}
+
+.screen { display: none; }
+
+.screen.active {
+  display: block;
+  animation: appear .65s ease both;
+}
+
+.quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  line-height: 1.6;
+  color: #ffd5e5;
+  margin: 25px 0;
+}
+
+.signature {
+  color: #ff9fc4;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.float-heart {
+  position: fixed;
+  bottom: -50px;
+  color: #ff80ae;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatUp linear forwards;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+  15% { opacity: .8; }
+  100% {
+    transform: translateY(-110vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+.small {
+  color: #b9a4b7;
+  font-size: 12px;
+}
+</style>
+
+<!-- EmailJS library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- SCREEN 1 -->
+  <section class="screen active" id="s1">
+    <div class="tag">A little something for you</div>
+    <div class="heart">♡</div>
+
+    <h1>Hey, <em>Kashish.</em></h1>
+
+    <p>
+      This side <b>Moksh</b> 👀<br>
+      Okay, don't panic… it's not a boring link.
+    </p>
+
+    <p>
+      I have something to tell you, and typing it in a normal chat
+      felt way too basic. 💌
+    </p>
+
+    <button class="primary" onclick="next(2)">
+      Click here, pretty girl ♡
+    </button>
+
+    <p class="small">P.S. Don't leave halfway 😭</p>
+  </section>
+
+  <!-- SCREEN 2 -->
+  <section class="screen" id="s2">
+    <div class="tag">Okay, listen up</div>
+    <div class="heart">💗</div>
+
+    <h2>Not me being <em>delulu...</em></h2>
+
+    <p>
+      Me acting all chill when we talk,
+      but secretly smiling at my screen like an idiot. 🫠
+    </p>
+
+    <div class="quote">
+      "Your notification hits different.
+      Don't ask me why, I just know." 💕
+    </div>
+
+    <p>
+      Lowkey, you have become one of my favourite
+      reasons to smile.
+    </p>
+
+    <button class="secondary" onclick="next(1)">Wait, go back</button>
+    <button class="primary" onclick="next(3)">Okay, spill it 😭</button>
+  </section>
+
+  <!-- SCREEN 3 -->
+  <section class="screen" id="s3">
+    <div class="tag">No more hiding</div>
+    <div class="heart">♥</div>
+
+    <h2>Here's my <em>truth.</em></h2>
+
+    <p>
+      Kashish, I don't know exactly when it happened,
+      but somewhere between our conversations and
+      all the little things about you...
+    </p>
+
+    <p>
+      You started becoming someone special to me.
+      Your vibe, your smile, your presence —
+      they stay in my mind longer than they should. ❤️
+    </p>
+
+    <div class="quote">
+      "I don't need a perfect love story.
+      I'd just love a chance to create something real with you."
+    </div>
+
+    <button class="primary" onclick="next(4)">
+      One last thing... 💌
+    </button>
+  </section>
+
+  <!-- SCREEN 4: LOVE CONFESSION -->
+  <section class="screen" id="s4">
+    <div class="tag">Something from my heart ❤️</div>
+    <div class="heart">💖</div>
+
+    <h2>Kashish, <em>I Love You.</em></h2>
+
+    <p>
+      So here's me being brave for once...
+      no more hiding my feelings, no more pretending
+      that you're just another person in my life. ❤️
+    </p>
+
+    <div class="quote">
+      "I don't know what the future holds,
+      but I know one thing for sure...
+      my heart has a special place for you." 💌
+    </div>
+
+    <p>
+      Kashish, <b>I LOVE YOU. ❤️</b><br>
+      You're the girl who makes me smile
+      without even trying. 🫶🏻
+    </p>
+
+    <p>Will you give my heart a chance? 🥹💗</p>
+
+    <button class="primary" id="yesButton" onclick="answerYes()">
+      I Love You Too ❤️
+    </button>
+
+    <button class="secondary" onclick="answerMaybe()">
+      I Need Some Time 🙈
+    </button>
+
+    <p class="small">
+      Whatever your answer, my feelings are genuine. ♡
+    </p>
+  </section>
+
+  <!-- SCREEN 5: YES RESPONSE -->
+  <section class="screen" id="s5">
+    <div class="tag">Mission: make Moksh smile</div>
+    <div class="heart">💞</div>
+
+    <h2>WAIT, <em>FOR REAL?!</em></h2>
+
+    <p>
+      Not me smiling at my own screen right now. 😭❤️
+    </p>
+
+    <div class="quote">
+      "Maybe this is the beginning
+      of our favourite little story."
+    </div>
+
+    <p>You just made my heart so happy. ❤️</p>
+
+    <div class="signature">— Moksh, obviously ♡</div>
+
+    <button class="secondary" onclick="next(1)">
+      Replay our little story ↺
+    </button>
+  </section>
+
+  
+  <!-- SCREEN 6: NO CHANCE BABY -->
+  <section class="screen" id="s6">
+    <div class="tag">Wait a second, Kashish! 💗</div>
+    <div class="heart">🥺💖</div>
+
+    <h2><em>NO CHANCE, BABY!</em> 😭</h2>
+
+    <p>
+      Oyeee Kashish! 🙈❤️<br>
+      Itni easily thodi na jaane dunga!
+    </p>
+
+    <div class="quote">
+      "Ek baar phir soch lo, pretty girl...
+      itna pyaar karne wala dobara kahan milega?" 🥹💗
+    </div>
+
+    <p>
+      Come on, baby... give us a chance. ❤️
+    </p>
+
+    <button class="primary" onclick="answerYes()">
+      Say Yes, Baby! ❤️🥹
+    </button>
+
+    <p class="small">
+      I'll respect your decision, always. ♡
+    </p>
+  </section>
+
+</div>
+
+<script>
+// EmailJS configuration
+const EMAILJS_SERVICE_ID = "service_xwqn9fm";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const NOTIFICATION_EMAIL = "sodhifamilyofguruharsahai@gmail.com";
+
+// Initialize EmailJS
+emailjs.init({
+  publicKey: EMAILJS_PUBLIC_KEY
+});
+
+function next(number) {
+  document.querySelectorAll('.screen').forEach(screen => {
+    screen.classList.remove('active');
+  });
+
+  document.getElementById('s' + number).classList.add('active');
+
+  if (number === 3 || number === 4) {
+    hearts(8);
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Send notification when YES is clicked
+async function answerYes() {
+  const yesButton = document.getElementById('yesButton');
+
+  yesButton.disabled = true;
+  yesButton.textContent = 'Sending love... 💌';
+
+  try {
+    if (
+      EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID" ||
+      EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY"
+    ) {
+      throw new Error(
+        "Please add your EmailJS Template ID and Public Key."
+      );
+    }
+
+    await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        to_email: NOTIFICATION_EMAIL,
+        name: "Kashish",
+        message: 'Kashish clicked "I Love You Too ❤️" on Moksh\'s website.',
+        response: "YES ❤️",
+        website: "Moksh and Kashish Love Page"
+      }
+    );
+
+    console.log("Email notification sent successfully.");
+  } catch (error) {
+    console.error("Email notification failed:", error);
+  } finally {
+    next(5);
+    hearts(35);
+    yesButton.disabled = false;
+    yesButton.textContent = 'I Love You Too ❤️';
+  }
+}
+
+function answerMaybe() {
+  next(6);
+  hearts(10);
+}
+
+function hearts(amount) {
+  const symbols = ['♡', '♥', '💗', '💕', '✧'];
+
+  for (let i = 0; i < amount; i++) {
+    const heart = document.createElement('span');
+
+    heart.className = 'float-heart';
+    heart.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (15 + Math.random() * 25) + 'px';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8500);
+  }
+}
+
+// Gentle floating hearts in the background
+setInterval(() => hearts(1), 1400);
+</script>
+
+</body>
+</html>
